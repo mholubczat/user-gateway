@@ -66,11 +66,13 @@ function validate(data) {
 
 function displayErrors(errors) {
     for(let key in errors) {
-        const div = document.getElementById(`${key}div`);
+        const input = document.getElementById(`${key}`);
+        const parent = input.parentElement;
+
         const errorDiv = document.createElement('div');
         errorDiv.classList.add('error');
-        const message = document.createTextNode(errors[key]);
-        errorDiv.appendChild(message);
-        div.appendChild(errorDiv);
+        errorDiv.textContent = errors[key];
+
+        parent.appendChild(errorDiv);
     }
 }
