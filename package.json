@@ -1,0 +1,17 @@
+{
+  "name": "user-gateway",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "-": "^0.0.1",
+    "express": "^4.21.2",
+    "save": "^2.9.0"
+  }
+}
