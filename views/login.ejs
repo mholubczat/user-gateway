@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <title>Log in</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <script src="/javascripts/login.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" id="container">
     <h1>Log in</h1>
-    <form>
-        <input type="text"
-               id="login"
-               placeholder="Login"
-               required/>
-        <input type="password"
-               id="password"
-               placeholder="Password"
-               required/>
+    <form action="/login" method="POST">
+        <div id="logindiv">
+            <input type="text"
+                   id="login"
+                   placeholder="Login"
+            />
+        </div>
+        <div id="passworddiv">
+            <input type="password"
+                   id="password"
+                   placeholder="Password"
+            />
+        </div>
     </form>
-    <button id="login">Log in</button>
+    <button class="button" id="loginButton">Log in</button>
     <div class="message">
         <span>Don't have an account?</span>
         <a href="/signup">Sign up</a>
