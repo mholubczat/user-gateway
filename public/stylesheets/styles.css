@@ -16,19 +16,20 @@ body {
     text-align: center;
 }
 
-input, button {
+input, .button {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
     margin: 5px;
 }
 
-button {
+.button {
     margin-top: 15px;
     border-radius: 5px;
     background-color: dodgerblue;
     color: white;
     font-size: medium;
+    border: none;
 }
 
 input {
@@ -45,3 +46,10 @@ a {
     text-decoration: none;
 }
 
+.error {
+    margin-left: 5px;
+    margin-top: 3px;
+    color: red;
+    font-size: x-small;
+    text-align: left;
+}

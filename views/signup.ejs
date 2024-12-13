@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <script src="/javascripts/signup.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Sign up</h1>
+    <form action="/signup" method="POST">
+        <div id="logindiv">
+            <input type="text"
+               id="login"
+               placeholder="Login"
+            />
+        </div>
+        <div id="emaildiv">
+            <input type="email"
+               id="email"
+               placeholder="Enter your email"
+            />
+        </div>
+        <div id="passworddiv">
+            <input type="password"
+               id="password"
+               placeholder="Password"
+            />
+        </div>
+        <div id="confirm_passworddiv">
+            <input type="password"
+               id="confirm_password"
+               placeholder="Confirm password"
+            />
+        </div>
+    </form>
+    <button class="button" id="signupButton">Sign up</button>
+    <div class="message">
+        <span>Already have an account?</span>
+        <a href="/login">Log in</a>
+    </div>
+</div>
+</body>
+</html>
