@@ -1,20 +1,15 @@
-async function handleResponse(data) {
-    if(data.success) {
-        const container = document.getElementById('container');
-        container.innerHTML = '';
-        const greeting = document.createElement('p');
-        greeting.textContent = data.message;
+function handleSuccessResponse(data) {
+    const container = document.getElementById('container');
+    container.innerHTML = '';
+    const greeting = document.createElement('p');
+    greeting.textContent = data.message;
 
-        const logout = document.createElement('a');
-        logout.href = '/login';
-        logout.textContent = 'Log out';
+    const logout = document.createElement('a');
+    logout.href = '/login';
+    logout.textContent = 'Log out';
 
-        container.appendChild(greeting);
-        container.appendChild(logout);
-    } else {
-        const errors = { password: data.message };
-        displayErrors(errors);
-    }
+    container.appendChild(greeting);
+    container.appendChild(logout);
 }
 
 async function sendFormData() {
@@ -42,7 +37,12 @@ async function sendFormData() {
         });
 
         let result = await response.json();
-        await handleResponse(result);
+        if(response.ok) {
+            handleSuccessResponse(result);
+        }
+        else {
+            displayErrors(result);
+        }
     } catch (error){
         console.error(error);
     }
@@ -55,6 +55,7 @@ window.onload = function () {
 
 function validate(data) {
     const errors = {};
+
     for (let key in data) {
         if(data[key] === ''){
             errors[key] = 'Field is required';
