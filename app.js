@@ -38,7 +38,6 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
     const keys = ['login', 'email', 'password', 'confirm_password'];
     const errors = validate(req.body, keys);
-    console.log(errors);
     if(Object.keys(errors).length > 0){
         res.status(400).json(errors);
         return;
@@ -51,9 +50,12 @@ app.post('/signup', (req, res) => {
     }
 
     passwords[login] = req.body.password;
-    let message = `Hello, ${req.body.login}! Check your email address ${req.body.email} to verify account!`;
+    let message = `Hello, ${req.body.login}! Check your email address ${req.body.email} to verify account`;
     res.status(200).json({ message: message});
 })
+
+app.get('/getStats', (req, res) => res.status(200)
+        .json({ userCount : Object.keys(passwords).length, currentTime : new Date().toLocaleTimeString() }));
 
 app.listen(3000, () => console.log('Server started on port 3000'));
 

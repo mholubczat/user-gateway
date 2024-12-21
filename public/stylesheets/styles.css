@@ -1,6 +1,8 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 10px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -52,4 +54,10 @@ a {
     color: red;
     font-size: x-small;
     text-align: left;
+}
+
+.stats{
+    color: gray;
+    position: fixed;
+    bottom: 0;
 }

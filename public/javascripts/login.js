@@ -1,3 +1,16 @@
+async function fetchStats(){
+    try {
+        const stats = await fetch("http://localhost:3000/getStats");
+        const data = await stats.json();
+        document.getElementById('stats').innerHTML =
+            `<p>${data.userCount} registered users &bull; server time: ${data.currentTime}</p>`;
+    } catch (error){
+        console.error(error);
+    }
+}
+
+fetchStats().then(() => setInterval(fetchStats, 3000));
+
 function handleSuccessResponse(data) {
     const container = document.getElementById('container');
     container.innerHTML = '';
